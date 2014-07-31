@@ -72,7 +72,6 @@ describe('load file', function() {
     it('should return parser error for invalid JSON', function(done) {
          new TileJSON('tilejson://' + __dirname + '/fixtures/bad.tilejson', function(err, source) {
             assert.ok(err);
-            assert.equal(err.type, 'unexpected_token');
             done();
         });
     });
@@ -80,7 +79,6 @@ describe('load file', function() {
     it('should not attempt to load source from cache', function(done) {
          new TileJSON('tilejson://' + __dirname + '/fixtures/bad.tilejson', function(err, source) {
             assert.ok(err);
-            assert.equal(err.type, 'unexpected_token');
             done();
         });
     });
